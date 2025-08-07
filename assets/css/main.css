@@ -2567,7 +2567,7 @@ section,
 
 .contact .info-item i {
   font-size: 20px;
-  color: var(--accent-color);
+  color: #ffffff;
   background: color-mix(in srgb, var(--accent-color), transparent 70%);
   width: 44px;
   height: 44px;
@@ -2585,17 +2585,19 @@ section,
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 5px;
+  color: #ffffff;
 }
 
 .contact .info-item p {
   padding: 0;
   margin-bottom: 0;
   font-size: 14px;
+  color: #ffffff;
 }
 
 .contact .info-item:hover i {
   background: var(--accent-color);
-  color: var(--contrast-color);
+  color: #ffffff;
 }
 
 .contact .php-email-form {
