@@ -26,7 +26,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-<script src="/assets/js/main.js"></script>
   <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
@@ -50,8 +49,11 @@
 
 <body class="index-page">
 
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay"></div>
+
   <header id="header" class="header d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <i class="header-toggle bi bi-list">☰</i>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
       <!-- Uncomment the line below if you also wish to use an image logo -->
@@ -71,8 +73,8 @@
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="#skills"><i class="bi bi-code-slash navicon"></i> Skills</a></li>
+                        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Certifications</a></li>
         <!-- <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
@@ -289,6 +291,13 @@
             <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
               <div class="skill-container">
                 <div class="skill-item">
+                  <span>SQL</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <div class="skill-container">
+                <div class="skill-item">
                   <span>API Integration</span>
                 </div>
               </div>
@@ -373,8 +382,90 @@
 
         <div class="row">
 
+          <div class="col-12" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Working Experience</h3>
+          </div>
 
+          <div class="col-12" data-aos="fade-up" data-aos-delay="150">
+            <div class="resume-item">
+              <h4>Web Development Intern</h4>
+              <h5>Jan 2025 – Jun 2025</h5>
+              <p><em><a href="https://www.vabgo.com/" target="_blank">Vabgo Technologies</a> • Remote</em></p>
+              <ul>
+                <li>Developed a property listing website for selling and renting using Next.js, React.js, Tailwind CSS, and Supabase for full-stack functionality.</li>
+                <li>Gained hands-on experience with productivity tools like Cursor, Windsurf, and Polymet AI to speed up development and explore new tech.</li>
+                <li>Contributed to two additional projects:</li>
+                <ul>
+                  <li><a href="https://www.machinesearch.in/" target="_blank">Machine Search</a> – a custom search platform (Frontend & Backend)</li>
+                  <li><a href="https://bizsearch.in/" target="_blank">Bizsearch</a> – franchise/business selling website; designed UI in Figma and built the frontend.</li>
+                </ul>
+              </ul>
+            </div> <!--Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Application Developer</h4>
+              <h5>Mar 2022 – Jul 2023</h5>
+              <p><em><a href="https://www.nediveil.in/" target="_blank">NediVeil Technologies</a> • Remote</em></p>
+              <ul>
+                <li>Led a team of 8 members in developing multiple Flutter applications, including a food delivery app and a hospital token booking system.</li>
+                <li>Designed user interfaces using Figma, enhancing UI/UX consistency across projects.</li>
+                <li>Managed app development lifecycle, from design to deployment, while ensuring smooth team coordination.</li>
+                <li>Gained practical experience in team leadership, version control (Git), and handling client requirements.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+          </div>
+
+        </div>
+
+        <div class="row" style="margin-top: 50px;">
+
+          <div class="col-12" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Leadership & Club Involvement</h3>
+          </div>
+
+          <div class="col-12" data-aos="fade-up" data-aos-delay="250">
+            <div class="resume-item">
+              <h4>Vice President – Tech Crew</h4>
+              <h5>Sep 2024 – May 2025</h5>
+              <ul>
+                <li>Led the official tech club of the CSE department, overseeing a core team of innovators and volunteers.</li>
+                <li>Organized and managed large-scale events like Thinkathon, which gained recognition and became part of the college symposium.</li>
+                <li>Mentored juniors in UI/UX design and Flutter.</li>
+                <li>Focused on team coordination, empathy-driven leadership, and effective communication.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Chief Innovator – Tech Crew</h4>
+              <h5>Oct 2023 – Sep 2024</h5>
+              <ul>
+                <li>Initiated innovative workshops and internal sessions, including Figma Flow and Flutter Hands-on.</li>
+                <li>Introduced peers to modern design and development workflows using Figma.</li>
+                <li>Grew from a beginner speaker to a confident session host, even representing Tech Crew externally at events.</li>
+                <li>Invited as Chief Guest by Rotaract Club VCET to conduct a Figma workshop, expanding club impact beyond campus.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Executive Member – Rotaract Club VCET</h4>
+              <h5>Jun 2022 – May 2023</h5>
+              <ul>
+                <li>Contributed to the planning and execution of social service drives and awareness campaigns.</li>
+                <li>Played a supporting role in organizing community outreach initiatives and student-led programs.</li>
+                <li>Represented technical initiatives in collaborative events.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+          </div>
+
+        </div>
+
+        <div class="row" style="margin-top: 50px;">
+
+          <div class="col-12" data-aos="fade-up" data-aos-delay="300">
             <h3 class="resume-title">Education</h3>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="350">
             <div class="resume-item">
               <p>Bachelor of Engineering-Computer Science</p>
               <h5>2021 - 2025</h5>
@@ -382,76 +473,24 @@
                 and Technology, Erode</em></p>
               <p>CGPA-8.43</p>
             </div><!-- Edn Resume Item -->
+          </div>
 
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
             <div class="resume-item">
               <h4> Higher Secondary</h4>
               <h5>2020 - 2021</h5>
               <p><em>Vellalar Matriculation Higher Secondary School, Erode.</em></p>
               <p>Percentage-90</p>
             </div><!-- Edn Resume Item -->
+          </div>
 
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="450">
             <div class="resume-item">
               <h4>Secondary</h4>
               <h5>2018 - 2019</h5>
               <p><em>Kalaimagal Kalvi Nilayam, Erode.</em></p>
               <p>Percentage-87</p>
             </div><!-- Edn Resume Item -->
-
-            
-          
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Working Experience</h3>
-            <div class="resume-item">
-              <h4> Web Developer </h4>
-              <h5>January 2025- May 2025</h5>
-              <p><em>Vabgo</em></p>
-              <ul>
-                <li> Developed responsive web apps with real-time features for property, machinery, and franchise listings experiences</li>
-                <li> Researched and designed easy-to-use UI for business and franchise websites. </li>
-                <li> Applied AI tools like Cursor and Windsurf to enhance code quality and speed up development.</li>
-                
-              </ul>
-            </div> <!--Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Application Developer </h4>
-              <h5>December 2023- July 2024</h5>
-              <p><em>NediVeil Technologies</em></p>
-              <ul>
-                <li>Developed Flutter applications, including a Hospital token booking app, improving user experience.</li>
-                <li> Gained hands-on experience with Figma for UI/UX design and Flutter for app development.</li>
-            
-              </ul>
-            </div><!-- Edn Resume Item -->
-          
-            <!-- <div class="resume-item">
-              <h4>Chief Innovator </h4>
-              <h5>2023 - 2024</h5>
-              <p><em>Tech crew(Department Club)</em></p>
-              <ul>
-                <li>Guided and collaborated with fellow students and junior members on Flutter development projects.</li>
-                <li>Developed leadership skills through organizing and managing club activities</li>
-                 <li>Execution of unique events such as thinkathons and hands-on Flutter and seminars.</li>
-                <li>Fostered innovation within the club by introducing new concepts and development techniques.</li>
-                <li>Promoted a collaborative environment to enhance learning and creativity among members.</li>
-              </ul>
-            </div>Edn Resume Item -->
-
-            <!-- <div class="resume-item">
-              <h4>Core Executive Member</h4>
-              <h5>2022 - 2023</h5>
-              <p><em>Rotaract Club of VCET</em></p>
-              <ul>
-                <li>Developed leadership skills through organizing and managing club activities.</li>
-                <li>Enhanced communication abilities by collaborating with new people.</li>
-                <li>Fostered teamwork by working closely with other club members on various projects.</li>
-                <li>Gained experience in helping and supporting community initiatives and events.</li>
-              </ul>
-            </div>Edn Resume Item -->
-
           </div>
 
         </div>
@@ -460,12 +499,12 @@
 
     </section><!-- /Resume Section -->
 
-    <!-- Portfolio Section -->
+    <!-- Projects Section -->
     <section id="portfolio" class="portfolio section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
+        <h2>Projects</h2>
         <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
       </div><!-- End Section Title -->
 
@@ -484,11 +523,11 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
-                <img src="assets/img/ev app1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/app5.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>App 1</h4>
+                  <h4>ELocate App</h4>
                   <p>ELocate, an app to find e-vehicle charging stations with features like daily price updates, pre-booking for parking and charging slots, and scan-and-pay options, plus low power alerts using Flutter</p>
-                  <a href="assets/img/ev app1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/app5.png" title="ELocate App" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Harshanad03/Flutter/tree/main/Elocate" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -496,50 +535,145 @@
             
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
+                <img src="assets/img/app6.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>DigiKen App</h4>
+                  <p>DigiKen, a hospital token booking app using Flutter, allowing users to book appointments, consult online from home, and maintain medical records.</p>
+                  <a href="assets/img/app6.png" title="DigiKen App" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://github.com/Harshanad03/Flutter/tree/main/Digiken" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/app7.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>EasyFood App</h4>
+                  <p>EasyFood, a food delivery app addressing common issues by allocating delivery areas to specific personnel, ensuring direct customer-delivery contact, and maximizing delivery person profits using Flutter.</p>
+                  <a href="assets/img/app7.png" title="EasyFood App" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://github.com/Harshanad03/Flutter/tree/main/Easy_food" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/app8.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Games Collection</h4>
+                  <p>Games app featuring six games in one: ConnectBlocks, Snake, Memory Game, 2048, Rock Paper Scissors, and Tic Tac Toe</p>
+                  <a href="assets/img/app8.png" title="Games Collection" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://github.com/Harshanad03/games" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/app9.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>LearnGo App</h4>
+                  <p>LearnGo, an educational app with unique features like streaks, podcasts, note-taking, chatbot, attendance tracking, job offers, and internship opportunities</p>
+                  <a href="assets/img/app9.png" title="LearnGo App" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://www.figma.com/design/pHG91bbNrgKTxDjmgIUVB8/learngo?node-id=0-1&t=bLGYI5cqJEzUQaB3-1" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <!-- Original App Projects -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/ev app1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>ELocate App (Original)</h4>
+                  <p>ELocate, an app to find e-vehicle charging stations with features like daily price updates, pre-booking for parking and charging slots, and scan-and-pay options, plus low power alerts using Flutter</p>
+                  <a href="assets/img/ev app1.jpg" title="ELocate App (Original)" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://github.com/Harshanad03/Flutter/tree/main/Elocate" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
                 <img src="assets/img/dijiken.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>App 4</h4>
+                  <h4>DigiKen App (Original)</h4>
                   <p>DigiKen, a hospital token booking app using Flutter, allowing users to book appointments, consult online from home, and maintain medical records.</p>
-                  <a href="assets/img/dijiken.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/dijiken.jpg" title="DigiKen App (Original)" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Harshanad03/Flutter/tree/main/Digiken" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/easyfood.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>EasyFood App (Original)</h4>
+                  <p>EasyFood, a food delivery app addressing common issues by allocating delivery areas to specific personnel, ensuring direct customer-delivery contact, and maximizing delivery person profits using Flutter.</p>
+                  <a href="assets/img/easyfood.jpg" title="EasyFood App (Original)" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://github.com/Harshanad03/Flutter/tree/main/Easy_food" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/games1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Games Collection (Original)</h4>
+                  <p>Games app featuring six games in one: ConnectBlocks, Snake, Memory Game, 2048, Rock Paper Scissors, and Tic Tac Toe</p>
+                  <a href="assets/img/games1.jpg" title="Games Collection (Original)" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://github.com/Harshanad03/games" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="assets/img/evui.jpg" class="img-fluid" alt="">
+                <img src="assets/img/ui/ux4.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>ui/ux 1</h4>
+                  <h4>ELocate UI/UX</h4>
                   <p>ELocate, an app to find e-vehicle charging stations with features like daily price updates, pre-booking for parking and charging slots, and scan-and-pay options, plus low power alerts.</p>
-                  <a href="assets/img/evui.jpg" title="ui/ux 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/ui/ux4.jpg" title="ELocate UI/UX" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://www.figma.com/design/h0i0IKJIn7TfhPbW16Hee8/ev?node-id=0-1&t=nISXZOuPi6VI9KcS-1" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="assets/img/" class="img-fluid" alt="">
+                <img src="assets/img/ui/ux5.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>web 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <h4>Website UI/UX</h4>
+                  <p>Website featuring 3D designs and glassy effects, enhancing user experience with visually engaging and modern aesthetics</p>
+                  <a href="assets/img/ui/ux5.jpg" title="Website UI/UX" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="assets/img/easyfood.jpg" class="img-fluid" alt="">
+                <img src="assets/img/ui/ux6.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>EasyFood, a food delivery app addressing common issues by allocating delivery areas to specific personnel, ensuring direct customer-delivery contact, and maximizing delivery person profits using Flutter.</p>
-                  <a href="assets/img/easyfood.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://github.com/Harshanad03/Flutter/tree/main/Easy_food" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <h4>LearnGo UI/UX</h4>
+                  <p>LearnGo, an educational app with unique features like streaks, podcasts, note-taking, chatbot, attendance tracking, job offers, and internship opportunities</p>
+                  <a href="assets/img/ui/ux6.jpg" title="LearnGo UI/UX" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://www.figma.com/design/pHG91bbNrgKTxDjmgIUVB8/learngo?node-id=0-1&t=bLGYI5cqJEzUQaB3-1" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <!-- Original UI/UX Projects -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/evui.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>ELocate UI/UX (Original)</h4>
+                  <p>ELocate, an app to find e-vehicle charging stations with features like daily price updates, pre-booking for parking and charging slots, and scan-and-pay options, plus low power alerts.</p>
+                  <a href="assets/img/evui.jpg" title="ELocate UI/UX (Original)" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://www.figma.com/design/h0i0IKJIn7TfhPbW16Hee8/ev?node-id=0-1&t=nISXZOuPi6VI9KcS-1" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -548,35 +682,9 @@
               <div class="portfolio-content h-100">
                 <img src="assets/img/webui.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>ui/ux 2</h4>
-                  <p> Website featuring 3D designs and glassy effects, enhancing user experience with visually engaging and modern aesthetics</p>
-<!--                   <a href="" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a> -->
-<!--                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>web 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/games1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Games, app featuring six games in one: ConnectBlocks, Snake, Memory Game, 2048, Rock Paper Scissors, and Tic Tac Toe</p>
-                  <a href="assets/img/games1.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://github.com/Harshanad03/games" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <h4>Website UI/UX (Original)</h4>
+                  <p>Website featuring 3D designs and glassy effects, enhancing user experience with visually engaging and modern aesthetics</p>
+                  <a href="assets/img/webui.png" title="Website UI/UX (Original)" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -585,9 +693,9 @@
               <div class="portfolio-content h-100">
                 <img src="assets/img/learngo.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>ui/ux 3</h4>
+                  <h4>LearnGo UI/UX (Original)</h4>
                   <p>LearnGo, an educational app with unique features like streaks, podcasts, note-taking, chatbot, attendance tracking, job offers, and internship opportunities</p>
-                  <a href="assets/img/learngo.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/learngo.jpg" title="LearnGo UI/UX (Original)" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://www.figma.com/design/pHG91bbNrgKTxDjmgIUVB8/learngo?node-id=0-1&t=bLGYI5cqJEzUQaB3-1" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -595,16 +703,39 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <div class="portfolio-content h-100">
-                <img src="assets/img/" class="img-fluid" alt="">
+                <img src="assets/img/web1.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <h4>Property Listing Website</h4>
+                  <p>Developed a property listing website for selling and renting using Next.js, React.js, Tailwind CSS, and Supabase for full-stack functionality.</p>
+                  <a href="assets/img/web1.jpg" title="Property Listing Website" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://www.vabgo.com/" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/web2.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Machine Search Platform</h4>
+                  <p>Machine Search – a custom search platform with Frontend & Backend functionality for specialized equipment and machinery search.</p>
+                  <a href="assets/img/web2.jpg" title="Machine Search Platform" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://www.machinesearch.in/" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/web3.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Bizsearch Platform</h4>
+                  <p>Bizsearch – franchise/business selling website; designed UI in Figma and built the frontend for business listings and transactions.</p>
+                  <a href="assets/img/web3.jpg" title="Bizsearch Platform" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://bizsearch.in/" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
 
           </div><!-- End Portfolio Container -->
 

@@ -13,29 +13,34 @@
    * Header toggle
    */
   const headerToggleBtn = document.querySelector('.header-toggle');
+  const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
 
   function headerToggle() {
-    document.querySelector('#header').classList.toggle('header-show');
-    headerToggleBtn.classList.toggle('bi-list');
-    headerToggleBtn.classList.toggle('bi-x');
+    const header = document.querySelector('#header');
+    header.classList.toggle('header-show');
+    if (headerToggleBtn) {
+      headerToggleBtn.classList.toggle('bi-list');
+      headerToggleBtn.classList.toggle('bi-x');
+    }
+    if (mobileNavOverlay) {
+      mobileNavOverlay.classList.toggle('active');
+    }
+    
+    // Prevent body scroll when mobile nav is open
+    if (header.classList.contains('header-show')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
   
-  // Ensure the button exists and add event listener
   if (headerToggleBtn) {
     headerToggleBtn.addEventListener('click', headerToggle);
-    console.log('Hamburger button found and event listener added');
-    
-    // Force the button to be visible and clickable on mobile
-    if (window.innerWidth <= 1199) {
-      headerToggleBtn.style.display = 'flex';
-      headerToggleBtn.style.visibility = 'visible';
-      headerToggleBtn.style.opacity = '1';
-      headerToggleBtn.style.zIndex = '9999999';
-      headerToggleBtn.style.pointerEvents = 'auto';
-      console.log('Forced hamburger button visibility on mobile');
-    }
-  } else {
-    console.error('Hamburger button not found!');
+  }
+  
+  if (mobileNavOverlay) {
+    // Close mobile nav when clicking overlay
+    mobileNavOverlay.addEventListener('click', headerToggle);
   }
 
   /**
@@ -47,64 +52,6 @@
         headerToggle();
       }
     });
-
-  });
-
-  /**
-   * Ensure hamburger button visibility on resize
-   */
-  window.addEventListener('resize', () => {
-    if (headerToggleBtn) {
-      if (window.innerWidth <= 1199) {
-        headerToggleBtn.style.display = 'flex';
-        headerToggleBtn.style.visibility = 'visible';
-        headerToggleBtn.style.opacity = '1';
-        headerToggleBtn.style.zIndex = '9999999';
-        headerToggleBtn.style.pointerEvents = 'auto';
-      } else {
-        headerToggleBtn.style.display = 'none';
-      }
-    }
-    
-    // Ensure header is visible on desktop
-    const header = document.querySelector('#header');
-    if (header) {
-      if (window.innerWidth >= 1200) {
-        header.style.left = '0';
-        header.style.visibility = 'visible';
-        header.style.opacity = '1';
-        header.style.zIndex = '997';
-      }
-    }
-  });
-
-  /**
-   * Ensure hamburger button visibility on page load
-   */
-  window.addEventListener('load', () => {
-    if (headerToggleBtn) {
-      if (window.innerWidth <= 1199) {
-        headerToggleBtn.style.display = 'flex';
-        headerToggleBtn.style.visibility = 'visible';
-        headerToggleBtn.style.opacity = '1';
-        headerToggleBtn.style.zIndex = '9999999';
-        headerToggleBtn.style.pointerEvents = 'auto';
-        console.log('Hamburger button forced visible on mobile on page load');
-      } else {
-        headerToggleBtn.style.display = 'none';
-      }
-    }
-    
-    // Ensure header is visible on desktop on page load
-    const header = document.querySelector('#header');
-    if (header) {
-      if (window.innerWidth >= 1200) {
-        header.style.left = '0';
-        header.style.visibility = 'visible';
-        header.style.opacity = '1';
-        header.style.zIndex = '997';
-      }
-    }
   });
 
   /**
@@ -128,19 +75,6 @@
       preloader.remove();
     });
   }
-
-  /**
-   * Ensure header visibility on desktop on page load
-   */
-  window.addEventListener('load', () => {
-    const header = document.querySelector('#header');
-    if (header && window.innerWidth >= 1200) {
-      header.style.left = '0';
-      header.style.visibility = 'visible';
-      header.style.opacity = '1';
-      header.style.zIndex = '997';
-    }
-  });
 
   /**
    * Scroll top button
@@ -531,8 +465,31 @@
       });
     }
 
-    // Note: Particle effect removed to avoid conflicts with main toggle functionality
-    // The main headerToggle function should work properly now
+    // Add particle effect to header toggle
+    const headerToggle = document.querySelector('.header-toggle');
+    if (headerToggle) {
+      headerToggle.addEventListener('click', function() {
+        for (let i = 0; i < 8; i++) {
+          const particle = document.createElement('div');
+          particle.style.position = 'absolute';
+          particle.style.width = '4px';
+          particle.style.height = '4px';
+          particle.style.background = 'var(--accent-color)';
+          particle.style.borderRadius = '50%';
+          particle.style.pointerEvents = 'none';
+          particle.style.left = '50%';
+          particle.style.top = '50%';
+          particle.style.transform = 'translate(-50%, -50%)';
+          particle.style.animation = `particleExplosion 0.8s ease-out ${i * 0.1}s`;
+          
+          this.appendChild(particle);
+          
+          setTimeout(() => {
+            particle.remove();
+          }, 800);
+        }
+      });
+    }
 
     // Add scroll-based navbar effects
     window.addEventListener('scroll', function() {
