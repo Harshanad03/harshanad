@@ -860,21 +860,109 @@ function sendMail() {
       message: document.getElementById("message").value,
   };
 
+  // Get the submit button
+  const submitBtn = document.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.innerHTML;
+
+  // Show loading state
+  submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...';
+  submitBtn.disabled = true;
+
   const serviceId = "service_kml18ij";
   const templateId = "template_ozdffgl";
 
   emailjs.send(serviceId, templateId, params)
   .then(
       res => {
+          // Reset form fields
           document.getElementById("name").value = "";
           document.getElementById("email").value = "";
           document.getElementById("message").value = "";
           console.log(res);
-          alert("Great news! 🎉 Your message has been sent successfully! ✉️🚀");
-          location.reload();  // This will reload the page
+          
+          // Reset button state
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+          
+          // Show custom popup
+          showSuccessPopup();
       }
   )
-  .catch((err) => console.log(err));
+  .catch((err) => {
+      console.log(err);
+      
+      // Reset button state on error
+      submitBtn.innerHTML = originalBtnText;
+      submitBtn.disabled = false;
+      
+      // Show error popup
+      showErrorPopup();
+  });
 
   return false;  // Prevent the default form submission
+}
+
+// Function to show success popup
+function showSuccessPopup() {
+  createPopup(
+    '🎉 Message Sent Successfully!', 
+    'Great news! Your message has been sent successfully. We\'ll get back to you soon!',
+    'success'
+  );
+}
+
+// Function to show error popup
+function showErrorPopup() {
+  createPopup(
+    '❌ Oops! Something went wrong', 
+    'There was an error sending your message. Please try again later.',
+    'error'
+  );
+}
+
+// Function to create and show popup
+function createPopup(title, message, type) {
+  // Remove existing popup if any
+  const existingPopup = document.querySelector('.custom-popup');
+  if (existingPopup) {
+    existingPopup.remove();
+  }
+
+  // Create popup HTML
+  const popup = document.createElement('div');
+  popup.className = `custom-popup ${type}`;
+  popup.innerHTML = `
+    <div class="popup-content">
+      <div class="popup-header">
+        <h3>${title}</h3>
+      </div>
+      <div class="popup-body">
+        <p>${message}</p>
+      </div>
+      <div class="popup-footer">
+        <button class="popup-btn" onclick="closePopup()">OK</button>
+      </div>
+    </div>
+  `;
+
+  // Add popup to body
+  document.body.appendChild(popup);
+
+  // Show popup with animation
+  setTimeout(() => {
+    popup.classList.add('show');
+  }, 10);
+}
+
+// Function to close popup
+function closePopup() {
+  const popup = document.querySelector('.custom-popup');
+  if (popup) {
+    popup.classList.remove('show');
+    setTimeout(() => {
+      popup.remove();
+      // Reload the page after popup is closed
+      location.reload();
+    }, 300);
+  }
 }
