@@ -53,9 +53,10 @@
   <!-- Mobile Navigation Overlay -->
   <div class="mobile-nav-overlay"></div>
 
-  <header id="header" class="header d-flex flex-column">
-    <i class="header-toggle bi bi-list">☰</i>
+  <!-- Hamburger button independent of sidebar -->
+  <i class="header-toggle bi bi-list"></i>
 
+  <header id="header" class="header d-flex flex-column">
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
       <!-- Uncomment the line below if you also wish to use an image logo -->
       <!-- <img src="assets/img/logo.png" alt=""> -->
@@ -1119,17 +1120,17 @@
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <label for="name" class="pb-2">Your Name</label>
+                  <label for="name" class="pb-2">Your Name*</label>
                   <input type="text" name="name" id="name" class="form-control" required>
                 </div>
 
                 <div class="col-md-6">
-                  <label for="email" class="pb-2">Your Email</label>
+                  <label for="email" class="pb-2">Your Email*</label>
                   <input type="email" class="form-control" name="email" id="email" required>
                 </div>
 
                 <div class="col-md-12">
-                  <label for="message" class="pb-2">Message</label>
+                  <label for="message" class="pb-2">Message*</label>
                   <textarea class="form-control" name="message" rows="10" id="message" required></textarea>
                 </div>
 

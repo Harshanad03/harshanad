@@ -97,7 +97,7 @@ h6 {
   width: 320px;
   transition: all ease-in-out 0.4s;
   overflow-y: auto;
-  z-index: 997;
+  z-index: 9999;
   border-right: 2px solid color-mix(in srgb, var(--default-color), transparent 70%);
   box-shadow: 0 0 50px color-mix(in srgb, var(--default-color), transparent 95%);
   animation: slideInFromLeft 0.8s ease-out;
@@ -252,6 +252,12 @@ h6 {
 }
 
 @media (min-width: 1200px) {
+  /* Hide hamburger button on desktop */
+  .header-toggle {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
 
   .header~main,
   .header~#footer {
@@ -261,63 +267,89 @@ h6 {
 
 @media (max-width: 1199px) {
   .header {
-    left: -100%;
+    left: -100%; /* Hidden by default */
     width: 280px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  .header .header-toggle {
+  /* Show sidebar when toggled */
+  .header.header-show {
+    left: 0;
+    animation: slideInFromLeft 0.3s ease-out;
+  }
+  
+  /* Slide animation for sidebar */
+  @keyframes slideInFromLeft {
+    0% {
+      left: -100%;
+      opacity: 0.8;
+    }
+    100% {
+      left: 0;
+      opacity: 1;
+    }
+  }
+  
+  /* Hamburger button positioned independently of header */
+  .header-toggle {
     display: flex !important;
     opacity: 1 !important;
     visibility: visible !important;
+    position: fixed !important;
+    z-index: 10000 !important;
+    /* Position relative to viewport, not header */
+    top: 20px !important;
+    right: 20px !important; /* Changed to right side to avoid left positioning issues */
+    width: 50px !important;
+    height: 50px !important;
+    background: linear-gradient(135deg, #00abf0 0%, #0099cc 100%) !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    box-shadow: 0 5px 20px rgba(0, 171, 240, 0.4) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    /* Remove header's transform effects */
+    transform: none !important;
+    /* Override any display: none */
+    display: flex !important;
   }
   
-  /* Ensure main content doesn't overlap with hamburger button */
-  .main {
-    padding-left: 0;
+  /* Main content takes full width when sidebar is hidden */
+  .main,
+  #footer {
+    margin-left: 0;
   }
 }
 
 @media (max-width: 768px) {
   .header {
     width: 260px;
+    left: -100%; /* Hidden by default */
   }
   
-  .header .header-toggle {
-    display: flex !important; /* ✅ force it visible */
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    top: 20px;
-    left: 20px;
-    position: fixed;
-    z-index: 9999;
-    color: #fff;
-    background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), transparent 20%) 100%);
-    border-radius: 50%;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    opacity: 1 !important;
-    visibility: visible !important;
+
+  
+  /* Main content takes full width when sidebar is hidden */
+  .main,
+  #footer {
+    margin-left: 0;
   }
 }
 
-@media (min-width: 1200px) {
-  .header .header-toggle {
-    display: none;
-  }
-  
-  .mobile-nav-overlay {
-    display: none;
-  }
-}
+/* Show hamburger button for ALL views except laptop and desktop */
+/* Responsive hamburger sizing removed */
 
-.header.header-show {
-  left: 0;
-  animation: slideInFromLeft 0.6s ease-out;
-}
+/* Hamburger button media queries removed */
+
+/* Hamburger button visibility rules removed */
+
+/* All hamburger button CSS removed */
+
+
 
 /* Mobile Navigation Overlay */
 .mobile-nav-overlay {
@@ -332,18 +364,20 @@ h6 {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  pointer-events: none; /* Allow clicks to pass through when hidden */
 }
 
 .mobile-nav-overlay.active {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto; /* Enable clicks when overlay is active */
 }
 
-.header .header-toggle {
-  color: var(--contrast-color);
-  background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), transparent 20%) 100%);
+.header-toggle {
+  color: #ffffff;
+  background: linear-gradient(135deg, #00abf0 0%, #0099cc 100%);
   font-size: 24px;
-  display: none; /* Hidden by default */
+  display: flex; /* Always visible by default */
   align-items: center;
   justify-content: center;
   width: 50px;
@@ -352,42 +386,47 @@ h6 {
   cursor: pointer;
   position: fixed;
   top: 20px;
-  left: 20px;
-  z-index: 9999;
+  right: 20px; /* Changed to right side */
+  z-index: 10000;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 5px 20px color-mix(in srgb, var(--accent-color), transparent 50%);
+  box-shadow: 0 5px 20px rgba(0, 171, 240, 0.4);
   animation: pulse 2s infinite;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
-  /* Ensure visibility on mobile */
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
   opacity: 1;
   visibility: visible;
+  transform: none; /* Prevent any transform inheritance */
 }
 
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 5px 20px color-mix(in srgb, var(--accent-color), transparent 50%);
+    box-shadow: 0 5px 20px rgba(0, 171, 240, 0.4);
   }
   50% {
     transform: scale(1.05);
-    box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 70%);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
   }
 }
 
-.header .header-toggle:hover {
-  color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+.header-toggle:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, #0088cc 0%, #006699 100%);
   transform: scale(1.1) rotate(90deg);
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-color), transparent 60%);
+  box-shadow: 0 10px 30px rgba(0, 136, 204, 0.6);
 }
 
-.header .header-toggle.bi-x {
+/* Responsive hover effects removed */
+
+.header-toggle.bi-x {
   transform: rotate(180deg);
-  background: color-mix(in srgb, var(--accent-color) 85%, white 20%);
+  background: linear-gradient(135deg, #0088cc 0%, #006699 100%);
 }
 
-.header .header-toggle.bi-x:hover {
+.header-toggle.bi-x:hover {
   transform: scale(1.1) rotate(270deg);
 }
 
@@ -636,7 +675,7 @@ h6 {
   opacity: 0;
   right: 15px;
   bottom: -15px;
-  z-index: 99999;
+  z-index: 10000;
   background-color: var(--accent-color);
   width: 44px;
   height: 44px;
@@ -2686,9 +2725,6 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
 
 .resume1 {
   background-color: #00abf0; /* Green */
@@ -3183,4 +3219,179 @@ section,
 @keyframes dividerShimmer {
   0% { left: -100%; }
   100% { left: 100%; }
+}
+
+/*--------------------------------------------------------------
+# Custom Popup Styles
+--------------------------------------------------------------*/
+
+/* Popup overlay */
+.custom-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Show popup */
+.custom-popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Popup content container */
+.popup-content {
+  background: var(--background-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 171, 240, 0.3);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow: auto;
+  transform: scale(0.7) translateY(-50px);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Popup content animation when shown */
+.custom-popup.show .popup-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Popup header */
+.popup-header {
+  padding: 25px 30px 15px;
+  border-bottom: 1px solid rgba(0, 171, 240, 0.2);
+  text-align: center;
+  background: linear-gradient(135deg, rgba(0, 171, 240, 0.1), rgba(0, 171, 240, 0.05));
+  border-radius: 13px 13px 0 0;
+}
+
+.popup-header h3 {
+  margin: 0;
+  color: var(--accent-color);
+  font-size: 24px;
+  font-weight: 600;
+  font-family: var(--heading-font);
+}
+
+
+
+/* Popup body */
+.popup-body {
+  padding: 25px 30px;
+}
+
+.popup-body p {
+  margin: 0;
+  color: var(--default-color);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Popup footer */
+.popup-footer {
+  padding: 15px 30px 25px;
+  text-align: center;
+}
+
+/* Popup button */
+.popup-btn {
+  background: linear-gradient(135deg, var(--accent-color), #0099cc);
+  color: var(--contrast-color);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 171, 240, 0.3);
+}
+
+.popup-btn:hover {
+  background: linear-gradient(135deg, #0099cc, #0088bb);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 171, 240, 0.4);
+}
+
+.popup-btn:active {
+  transform: translateY(0);
+}
+
+/* Success popup styling */
+.custom-popup.success .popup-header {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+  border-bottom-color: rgba(34, 197, 94, 0.2);
+}
+
+.custom-popup.success .popup-header h3 {
+  color: #22c55e;
+}
+
+.custom-popup.success {
+  animation: successPulse 0.6s ease-out;
+}
+
+/* Error popup styling */
+.custom-popup.error .popup-header {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+  border-bottom-color: rgba(239, 68, 68, 0.2);
+}
+
+.custom-popup.error .popup-header h3 {
+  color: #ef4444;
+}
+
+.custom-popup.error {
+  animation: errorShake 0.6s ease-out;
+}
+
+/* Success animation */
+@keyframes successPulse {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Error animation */
+@keyframes errorShake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .popup-content {
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+  
+  .popup-header,
+  .popup-body,
+  .popup-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .popup-header h3 {
+    font-size: 20px;
+  }
+  
+  .popup-body p {
+    font-size: 14px;
+  }
 }
